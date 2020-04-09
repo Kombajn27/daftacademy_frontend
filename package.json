@@ -1,0 +1,11 @@
+{
+  "name": "daftacademy_fl_homework1",
+  "version": "1.0.0",
+  "description": "First homework for daftcodeacademy - frontend levelup",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ariel Biernacki",
+  "license": "ISC"
+}
