@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Red Hat Display";
+  src: url('../assets/fonts/RedHatDisplay-Regular.ttf');
+}
+
+@import './partials/general.scss';
+@import './partials/variables.scss';
+@import './partials/header.scss';
+@import './partials/carousel.scss';
+@import './partials/arrivals.scss';
+@import './partials/themes.scss';
+@import './partials/newsletter.scss';
+@import './partials/footer.scss';

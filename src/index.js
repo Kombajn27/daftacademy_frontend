@@ -1,4 +1,6 @@
-import './styles/style.sass'
-import getImg from './script'
+// Import styles
+import './styles/style.scss'
 
-getImg()
+// Import scripts
+import './scripts/carousel';
+import './scripts/img_import';

@@ -1,0 +1,70 @@
+.newsletter {
+  width: 100%; 
+
+  &__cnt {
+    width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 0;
+  }
+
+  &__headline {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 35px;
+  }
+
+  &__info {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  &__subscribe-cnt {
+    margin-top: 45px;
+    min-width: 35%; 
+  }
+
+  &__subscribe-form {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    border-bottom: 2px solid $main-dark;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__subscribe-input {
+    width: 70%;
+
+    &::placeholder {
+      font-size: 13px;
+      font-weight: 500;
+    }
+  } 
+
+  &__subscribe-submit {
+    font-size: 13px;
+    font-weight: 500;
+    width: 15%;
+    background-color: $main-light;
+
+    &:hover {
+      box-shadow: 0 0 2px $main-dark;
+      border-radius: 3px;
+    }
+    
+    &:focus {
+      outline: none;
+      background-color: $main-dark;
+      color: $main-light;
+    }
+  }
+
+  &__subscribe-asterix {
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 24px;
+  }
+}
