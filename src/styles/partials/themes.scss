@@ -2,34 +2,56 @@
   width: 100%;
 
   &__cnt {
-    max-width: 1300px;
-    height: auto;
-    margin: 0 auto;
+    @include setContainer;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 5%);
-    grid-template-rows: repeat(10, 65px);
+    grid-template-columns: repeat(20, 1fr);
+    grid-auto-rows: auto;
+    row-gap: 5px;
+    column-gap: 5px;
     grid-auto-flow: dense;
+ 
+    @media screen and (max-width: 1350px) {
+      width: 90%;
+    } 
+
+    @media screen and (max-width: 500px) {
+      display: block;
+      margin: 0 auto;
+    }
   }
 
   &__element {
-    margin: 5px;
     position: relative;
     overflow: hidden;
 
     &--big {
-      grid-column: span 8;
-      grid-row: span 10;
+      @include gridSpan(8, 10);
+
+      @media screen and (max-width: 700px) {
+        @include gridSpan(20, 6);
+      }  
     }
 
     &--long {
-      grid-column: span 12;
-      grid-row: span 5;
+      @include gridSpan(12, 5);
+
+      @media screen and (max-width: 700px) {
+        @include gridSpan(20, 6);  
+      }
     }
 
     &--normal {
-      grid-column: span 6;
-      grid-row: span 5;
+      @include gridSpan(6, 5);
+
+      @media screen and (max-width: 700px) {
+        @include gridSpan(10, 8);    
+      }
     }
+  }
+
+  &__img {
+    width: 100%;  
+    height: auto;  
   }
 
   &__info {
@@ -40,18 +62,29 @@
     background-color: rgba(255, 255, 255, 0.8);
     padding: 5px;
     border-radius: 5px;
+
+    @media screen and (max-width: 992px) {
+      top: 15px;
+      left: 15px;   
+    }
   }
   
   &__title {
-    font-size: 24px;
-    font-weight: 500;
+    @include setFont(24px, 500);
     color: $main-dark;
+
+    @media screen and (max-width: 1350px) {
+      @include setFont(18px, 500);      
+    }
+
+    @media screen and (max-width: 992px) {
+      @include setFont(16px, 700);   
+    }
   }
 
   &__link {
-    font-size: 13px;
+    @include setFont(13px, 500);
     line-height: 17px;
-    font-weight: 500;
     color: $main-dark;
     text-decoration: none;
 
@@ -61,5 +94,4 @@
       color: $main-dark;
     }
   }
-
 }

@@ -20,7 +20,7 @@
       display: block;
 
       &-thumb {
-        background-color:rgba(255, 255, 255, 0.2);
+        background-color: $main-contrast;
         width: 100px; 
         border-radius: 2px;
       }
@@ -59,8 +59,7 @@
   }
   
   &__info {
-    font-size: 13px;
-    font-weight: 500;
+    @include setFont(13px, 500);
     margin-bottom: 10px;
     
     &:last-child {
@@ -79,8 +78,7 @@
     cursor: pointer;
     position: absolute;
     color: $main-light;
-    font-size: 20px;
-    font-weight: 700;
+    @include setFont(20px, 700);
 
     @media screen and (max-width: 800px) {
       display: none;

@@ -1,6 +1,5 @@
 .arrivals {
-  max-width: 1300px;
-  margin: 0 auto;
+  @include setContainer;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,6 +10,18 @@
     font-size: 48px;
     height: 256px;
     line-height: 256px;
+
+    @media screen and (max-width: 1350px) {
+      font-size: 3vw;
+      line-height: 20vw;
+      height: 20vw;
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 24px;
+      line-height: 180px;
+      height: 180px;
+    }
   }
 
   &__content {
@@ -18,27 +29,65 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    @media screen and (max-width: 1350px) {
+      justify-content: space-around;
+    }
+
+    @media screen and (max-width: 768px) {
+      justify-content: space-evenly;
+    }
   }
 
   &__item {
-    height: 500px;
+    height: auto;
     margin-bottom: 30px;
     padding: 0;
+
+    @media screen and (max-width: 1350px) {
+      margin: 15px;
+    } 
+
+    @media screen and (max-width: 768px) {
+      width: 43%;
+      margin: 0 0 30px 0;
+    } 
+  }
+
+  &__img {
+    @media screen and (max-width: 768px) {
+      max-width: 100%;
+      max-height: 100%;
+    } 
   }
 
   &__info-cnt {
     margin-top: 18px;
+
+    @media screen and (max-width: 768px) {
+      margin-top: 10px;
+    }
   }
 
   &__info {
-    font-size: 13px;
-    font-weight: 500;
+    @include setFont(13px, 500);
     margin-bottom: 10px;
 
     &--distinction {
-      font-size: 10px;
-      font-weight: 900;
+      @include setFont(10px, 900);
     }
+
+    &--hidden {
+      display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 5px;
+    } 
+  }
+
+  &__icon {
+    margin-right: 10px;    
   }
 
   &__button {
@@ -48,8 +97,7 @@
     border: 2px solid $main-dark;
     text-align: center;
     line-height: 48px;
-    font-size: 13px;
-    font-family: 500;
+    @include setFont(13px, 500);
     cursor: pointer;
   }
 }

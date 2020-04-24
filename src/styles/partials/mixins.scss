@@ -1,0 +1,14 @@
+@mixin setFont($fontSize, $fontWeight) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+}
+
+@mixin setContainer {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+@mixin gridSpan ($column, $row) {
+  grid-column: span $column;
+  grid-row: span $row;
+}
