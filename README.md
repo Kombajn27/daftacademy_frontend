@@ -1,3 +1,3 @@
 # Daftacademy frontend Levelup 
 
-First task - basic webpack configuration
+Second task - HTML and SCSS practice
