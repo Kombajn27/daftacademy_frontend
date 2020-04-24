@@ -2,28 +2,45 @@
   width: 100%; 
 
   &__cnt {
-    width: 1300px;
-    margin: 0 auto;
+    @include setContainer;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 100px 0;
+
+    @media screen and (max-width: 768px) {
+      padding: 50px 0;
+    }
   }
 
   &__headline {
-    font-size: 30px;
-    font-weight: 500;
+    @include setFont(30px, 500);
     margin-bottom: 35px;
+
+    @media screen and (max-width: 768px) {
+      @include setFont(16px, 700);
+    }
   }
 
   &__info {
-    font-size: 16px;
-    font-weight: 500;
+    @include setFont(16px, 500);
+
+    @media screen and (max-width: 768px) {
+      font-size: 13px;
+    }
   }
 
   &__subscribe-cnt {
     margin-top: 45px;
     min-width: 35%; 
+
+    @media screen and (max-width: 1200px) {
+      min-width: 60%;
+    }
+
+    @media screen and (max-width: 600px) {
+      min-width: 85%;
+    }
   }
 
   &__subscribe-form {
@@ -39,16 +56,22 @@
     width: 70%;
 
     &::placeholder {
-      font-size: 13px;
-      font-weight: 500;
+      @include setFont(13px, 500);
+    }
+
+    @media screen and (max-width: 1200px) {
+      min-width: 60%;
     }
   } 
 
   &__subscribe-submit {
-    font-size: 13px;
-    font-weight: 500;
+    @include setFont(13px, 500);
     width: 15%;
     background-color: $main-light;
+
+    @media screen and (max-width: 1200px) {
+      min-width: 20%;
+    }
 
     &:hover {
       box-shadow: 0 0 2px $main-dark;
@@ -63,8 +86,7 @@
   }
 
   &__subscribe-asterix {
-    font-size: 13px;
-    font-weight: 500;
+    @include setFont(13px, 500);
     margin-top: 24px;
   }
 }

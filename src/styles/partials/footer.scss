@@ -2,10 +2,14 @@
   width: 100%;
 
   &__cnt {
-    max-width: 1300px;
-    margin: 0 auto;
+    @include setContainer;
     display: flex;
     flex-direction: column;
+    border-top: 1px solid $main-semi-light;
+
+    @media screen and (max-width: 1350px) {
+      width: 90%;
+    }
   }
 
   &__main-section {
@@ -13,10 +17,18 @@
     display: flex;
     align-items: center;
     padding: 30px 0;
+
+    @media screen and (max-width: 1200px) {
+      flex-direction: column;
+    }
   }
 
   &__media {
     flex: 1;
+
+    @media screen and (max-width: 1350px) {
+      width: 100%;
+    }
   }
 
   &__media-icon {
@@ -28,11 +40,34 @@
     justify-content: center;
     flex: 1;
 
+    @media screen and (max-width: 1200px) {
+      margin: 25px 0px;
+    }
+
+    @media screen and (max-width: 576px) {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
+
     &-item {
       margin: 0 22px;
-      font-size: 13px;
-      font-weight: 700;
+      @include setFont(13px, 700);
       color: $main-dark;
+      border-bottom: 1px solid transparent;
+
+      @media screen and (max-width: 1350px) {
+        margin: 0 10px;
+      }
+
+      @media screen and (max-width: 768px) {
+        margin: 0 5px;
+        font-size: 12px;
+      }
+
+      @media screen and (max-width: 576px) {
+        margin: 0;
+      }
 
       &:hover {
         text-decoration: none;
@@ -44,18 +79,22 @@
 
   &__nationality {
     flex: 1;
+    display: flex;
+    justify-content: flex-end;
     margin-bottom: 0;
-    text-align: right;
+
+    @media screen and (max-width: 576px) {
+      width: 100%;
+      justify-content: space-between;
+    }
 
     &-label {
-      font-size: 13px;
-      font-weight: 500;
+      @include setFont(13px, 500);
       margin-bottom: 0;
     }
 
     &-select {
-      font-size: 13px;
-      font-weight: 700;
+      @include setFont(13px, 700);
     }
   }
 
@@ -63,10 +102,18 @@
     display: flex;
     justify-content: space-between;
     padding: 10px 0;
+    
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   &__rights {
     margin: 0;
-  }
+    @include setFont(14px, 500);
 
+    @media screen and (max-width: 768px) {
+      margin-bottom: 20px;
+    }
+  }
 }

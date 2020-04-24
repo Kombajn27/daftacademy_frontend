@@ -2,28 +2,124 @@
   background-color: $main-semi-light;
   height: 550px;
   width: 100%;
+  border: 1px solid green;
+  background: url(https://images.pexels.com/photos/1029624/pexels-photo-1029624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-position: center;
+  background-size: cover;
 }
 
 .nav-container {
-  max-width: 1300px;
+  @include setContainer;
   height: 90px; 
-  margin: 0 auto;
+  position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
 
-  &__links {
-    color: $main-dark;
+  @media screen and (max-width: 1350px) {
+    padding: 0 20px;
   }
 
-  &__icons {
-    img {
-      margin: 0 5px;
+  .navigation {
+    flex: 5;
+
+    @media screen and (max-width: 500px) {
+      flex: 2;
     }
 
-    p {
+    &__button {
+      display: none;
+      background-color: transparent;
+      cursor: pointer;
+      padding: 8px 6px 6px;
+      border-radius: 4px;
+
+      &:hover {
+        box-shadow: 0 0 5px $main-dark;
+      }
+
+      &:focus {
+        outline: none;
+      }
+      
+      &:active {
+        box-shadow: 0 0 5px $main-contrast;
+      }
+
+      @media screen and (max-width: 992px) {
+        display: block;
+      }
+    }
+
+    &__cnt {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;;
+      width: 375px;
+      height: 40px;
+      background-color: transparent;
+
+      @media screen and (max-width: 1200px) {
+        width: 300px;
+      }
+
+      @media screen and (max-width: 992px) {
+        position: absolute;
+        flex-direction: column;
+        top: 70px;
+        left: -200px;
+        transition: 0.35s ease-in;
+        height: auto;
+        width: auto;
+        padding: 5px 10px;
+      }
+
+      &--active { 
+        left: 0px;
+      }
+    }
+
+    &__link {
+      @include setFont(15px, 700);
+      color: $main-dark;
+      padding: 5px 0;
+      border: 2px solid transparent;
+
+      &:hover {
+        border-bottom: 2px solid $main-dark;
+      }
+    }
+  }
+
+  .logo-cnt {
+    flex: 5;
+    text-align: center;
+
+    &__logo {
+      @media screen and (max-width: 500px) {
+        height: 25px;
+      }
+    }
+  }
+
+  .icons-cnt {
+    flex: 5;
+    display: flex;
+    justify-content: flex-end;
+
+    &__icon {
+      margin: 0 5px;
+
+      &:first-child {
+        margin-right: 25px; 
+      }
+    }
+
+    &__count {
       width: 16px;
       height: 16px;
       text-align: center;
-      font-size: 16px;
+      @include setFont(16px, 500);
       line-height: 16px;
       margin-bottom: 0;
       color: $main-light;

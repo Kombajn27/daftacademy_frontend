@@ -3,6 +3,7 @@
   src: url('../assets/fonts/RedHatDisplay-Regular.ttf');
 }
 
+@import './partials/mixins.scss';
 @import './partials/general.scss';
 @import './partials/variables.scss';
 @import './partials/header.scss';
