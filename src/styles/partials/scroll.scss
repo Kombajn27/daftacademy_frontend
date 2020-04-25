@@ -1,0 +1,39 @@
+.scroll-arrow {
+  @include setFont(24px, 700);
+  display: none;
+  text-align: center;
+  position: sticky;
+  z-index: 10;
+  top: 50vh;
+  left: 93vw;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  box-shadow: 0 0 6px $main-semi-dark;
+  background-color: $main-light;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  transform: translateY(-50%);
+
+  @media screen and (max-width: 992px) {
+    left: 90vw;
+    width: 35px;
+    height: 35px;
+  }
+
+  @media screen and (max-width: 576px) {
+    left: 87vw;
+  }
+
+  &--visible {
+    display: inline-block;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    box-shadow: 0 0 6px $main-contrast;
+  }
+}
