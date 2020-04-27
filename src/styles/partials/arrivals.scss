@@ -99,5 +99,13 @@
     line-height: 48px;
     @include setFont(13px, 500);
     cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: $main-light;
+    }
   }
 }
