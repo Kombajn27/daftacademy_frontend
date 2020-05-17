@@ -4,12 +4,18 @@ import './styles/style.scss'
 // Import scripts
 import './scripts/carousel';
 import './scripts/img_import';
-import { scrollToTop, addProducts, getCurrentTime, hamburgerActions } from './scripts/mainModule';
+import getCurrentTime from './scripts/getCurrentTime';
+import  { launchProducts } from './scripts/addProducts';
+import scrollToTop from './scripts/scrollToTop';
+import hamburgerActions from './scripts/hamburgerActions';
+import { launchCarousel } from './scripts/carousel';
+import { launchThemes } from './scripts/themes';
 
 document.addEventListener("DOMContentLoaded", (e) => {
-    hamburgerActions();
-    scrollToTop();
-    addProducts(4);
-    getCurrentTime();
+  hamburgerActions();
+  launchCarousel(12);
+  scrollToTop();
+  launchProducts(8);
+  launchThemes(4);
+  getCurrentTime();
 });
-

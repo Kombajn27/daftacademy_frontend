@@ -1,0 +1,70 @@
+@keyframes kineticA {
+	from, 25% { transform: rotate(0deg) }
+	50%, 75% { transform: rotate(180deg) }
+	to { transform: rotate(360deg) }
+}
+
+@keyframes kineticB {
+	from { transform: rotate(90deg) }
+	25%, 50% { transform: rotate(270deg) }
+	75%, to { transform: rotate(450deg) }
+}
+
+@mixin animation_set {
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+.loader {
+	flex-basis: 50%;
+	padding: 1.5em;
+	margin: 0 auto;
+
+	&--bright {
+		color: $main-light;
+	}
+
+	&--dark {
+		color: $main-dark;
+	}
+    
+	&__box {
+		@include animation_set();
+		margin: 0 auto 1.5em auto;
+		position: relative;
+		width: 3em;
+		height: 3em;
+		
+		&:before, &:after {
+			@include animation_set();
+			background: currentColor;
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 50%;
+			transform-origin: 50% 100%;	
+			clip-path: polygon(0 0,100% 0,50% 100%);
+			-webkit-clip-path: polygon(0 0,100% 0,50% 100%);
+		}
+
+		&--kinetic:before {
+			animation-name: kineticA;
+		}
+
+		&--kinetic:after {
+			animation-name: kineticB;
+		}
+	}
+
+	&__text {
+		text-align: center;
+	}
+}
+
+.invisible {
+	display: none;
+}
