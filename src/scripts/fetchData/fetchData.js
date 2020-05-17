@@ -5,7 +5,7 @@ const fetchData = async function (count, deck = 'new') {
     
     return data;
   } catch (error) {
-    return { error }
+    return { error };
   }
 };
 

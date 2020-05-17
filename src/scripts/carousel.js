@@ -20,13 +20,13 @@ const createCarusel = (data) => {
         <p class="carousel__info">${element.value} ${element.suit}</p>
         <p class="carousel__info">$50 - $60</p>
       </div> 
-    `
+    `;
     content.appendChild(item);
     itemWidth = item.offsetWidth;
   }
   loader.classList.add('invisible');
   next.style.display = "flex";
-}
+};
   
 const handleCarousel = () => {
   let contentWidth = carousel.offsetWidth;
@@ -55,7 +55,7 @@ const handleCarousel = () => {
 
 const errorHandler = () => {
   loaderText.innerText = "Sorry, something goes wrong...";
-}
+};
   
 window.addEventListener("resize", () => {
   carousel.scrollLeft = 0;

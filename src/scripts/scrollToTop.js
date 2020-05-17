@@ -14,4 +14,4 @@ export default function() {
   scrollArrow.addEventListener('click', (e) => {
     window.scrollTo({top: 0, behavior: 'smooth'});
   });
-};
+}

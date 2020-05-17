@@ -19,7 +19,7 @@ const showThemes = (data) => {
       <p class="themes__title">${data.cards[i].value} ${data.cards[i].suit}</p>
       <a class="themes__link" href="#">Shop now</a>
     </div>
-    `
+    `;
     themesCnt.appendChild(element);
   }
   loader.classList.add('invisible');
@@ -27,7 +27,7 @@ const showThemes = (data) => {
 
 const errorHandler = () => {
   loaderText.innerText = "Sorry, something goes wrong...";
-}
+};
 
 const launchThemes = (count) => {
   fetchData(count)

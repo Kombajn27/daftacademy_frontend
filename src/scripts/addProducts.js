@@ -23,12 +23,12 @@ const addProducts = (data) => {
     productCnt.appendChild(newElement);
   }
   loader.classList.add('invisible');
-}
+};
 
 const errorHandler = () => {
   loaderText.innerText = "Sorry, something goes wrong...";
-  addButton.classList.add('arrivals__button--invisible')
-}
+  addButton.classList.add('arrivals__button--invisible');
+};
 
 addButton.addEventListener('click', (e) => {
   e.preventDefault;
@@ -45,14 +45,14 @@ addButton.addEventListener('click', (e) => {
         errorHandler();
       }
     });
-})
+});
 
 const launchProducts = (count) => {
   fetchData(count)
     .then(data => {
       if (!data.error) {
         addProducts(data);
-        deck_id = data.deck_id
+        deck_id = data.deck_id;
       } else {
         errorHandler();
       }

@@ -3,4 +3,4 @@ export default function() {
   const textCnt = document.querySelector('.footer__rights');
 
   textCnt.innerText = `©${date} Zonex All rights reserved`;
-};
+}

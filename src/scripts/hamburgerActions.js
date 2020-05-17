@@ -5,4 +5,4 @@ export default function() {
   button.addEventListener('click', (e) => {
     navigation.classList.toggle('navigation__cnt--active');
   });
-};
+}
